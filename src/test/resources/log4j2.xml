@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- LOG4J2 Configuration -->
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Basic logging goes to "datanucleus.log" -->
+        <File name="A1" fileName="datanucleus.log">
+            <PatternLayout pattern="%d{HH:mm:ss,SSS} (%t) %-5p [%c] - %m%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!-- Default to DEBUG level for all DataNucleus categories -->
+        <Logger name="DataNucleus" level="DEBUG" additivity="false">
+            <AppenderRef ref="A1"/>
+        </Logger>
+
+        <Logger name="com.mchange.v2.c3p0" level="INFO" additivity="false">
+            <AppenderRef ref="A1"/>
+        </Logger>
+        <Logger name="com.mchange.v2.resourcepool" level="INFO" additivity="false">
+            <AppenderRef ref="A1"/>
+        </Logger>
+        <Logger name="org.logicalcobwebs.proxool" level="INFO" additivity="false">
+            <AppenderRef ref="A1"/>
+        </Logger>
+
+        <Root level="WARN"/>
+    </Loggers>
+</Configuration>

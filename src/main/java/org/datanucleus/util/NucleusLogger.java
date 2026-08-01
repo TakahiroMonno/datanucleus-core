@@ -24,7 +24,7 @@ import java.util.Arrays;
 import org.datanucleus.exceptions.NucleusException;
 
 /**
- * Logging framework for DataNucleus. Allows use of Log4J v2, Log4j v1, JRE, or no logging.
+ * Logging framework for DataNucleus. Allows use of Log4J v2, JRE, or no logging.
  * Performs a similar role to Apache CommonsLogging yet doesn't need an extra jar to be present in the CLASSPATH and also allows for no available logger.
  * Provides a series of predefined Loggers that can be used in the persistence process.
  * Also provides a method to create your own logger category.
@@ -97,17 +97,8 @@ public abstract class NucleusLogger
             }
             catch (Exception e)
             {
-                try
-                {
-                    // Try Log4j v1 if present
-                    NucleusLogger.class.getClassLoader().loadClass("org.apache.log4j.Logger");
-                    loggerClass = org.datanucleus.util.Log4JLogger.class;
-                }
-                catch (Exception e2)
-                {
-                    // Fallback to JRE logging
-                    loggerClass = org.datanucleus.util.JRELogger.class;
-                }
+                // Fallback to JRE logging
+                loggerClass = org.datanucleus.util.JRELogger.class;
             }
         }
         LOGGER_CLASS = loggerClass;

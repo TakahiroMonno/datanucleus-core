@@ -1,0 +1,29 @@
+Settings  Status   Config   Usage   Stats
+
+Session
+
+Total cost:            $1.52
+Total duration (API):  3m 40s
+Total duration (wall): 22m 28s
+Total code changes:    35 lines added, 21 lines removed
+Usage by model:
+    claude-haiku-4-5:  1.9k input, 46 output, 0 cache read, 0 cache write ($0.0021)
+     claude-sonnet-5:  580 input, 15.8k output, 2.5m cache read, 89.4k cache write ($1.52)
+
+Current session
+████                                               8% used
+Resets 9:10pm (Asia/Tokyo)
+
+Current week (all models)
+███▌                                               7% used
+Resets Aug 7 at 5am (Asia/Tokyo)
++50% weekly limits promo through Aug 19 · clau.de/cc-50-promo
+
+What's contributing to your limits usage?
+Approximate, based on local sessions on this machine — does not include other devices or claude.ai
+
+Last 24h · these are independent characteristics of your usage, not a breakdown
+
+Nothing over 10% in this period — try the other window.
+
+d to day · w to week

@@ -74,9 +74,9 @@ ENV MAVEN_REPO=/m2/repository \
 # dependency:go-offline だけではプラグイン（特に surefire / jacoco / felix bundle）
 # の取得漏れが起きやすいため、実際に test まで一度流してキャッシュを温める。
 # 依存: junit 4.13.2 (親POM, test) / log4j-core 2.25.4 (test) /
-#       log4j 1.2.17, log4j-api 2.17.1, javax.transaction-api 1.3, cdi-api 2.0,
+#       log4j-api 2.17.1, javax.transaction-api 1.3, cdi-api 2.0,
 #       org.osgi.core 4.2.0, validation-api 2.0.1.Final, cache-api 1.1.1,
-#       ant 1.10.11 （移行/比較実験では log4j 1.x -> 2.x の二本立てに注意）
+#       ant 1.10.11 （log4j 1.x への依存は撤廃済み、log4j 2.x のみを使用）
 # 失敗してもイメージビルドは止めない（キャッシュはベストエフォート）。
 COPY . /tmp/datanucleus-core-original
 RUN set -eux; \
