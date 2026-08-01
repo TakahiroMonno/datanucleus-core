@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- LOG4J2 Configuration -->
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Basic logging goes to "datanucleus.log" -->
+        <File name="A1" fileName="datanucleus.log">
+            <PatternLayout pattern="%d{HH:mm:ss,SSS} (%t) %-5p [%c] - %m%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!-- Categories: each category can be set to a "level", and to direct to an appender -->
+
+        <!-- Default to DEBUG level for all categories -->
+        <Logger name="DataNucleus" level="DEBUG">
+            <AppenderRef ref="A1"/>
+        </Logger>
+
+        <Logger name="com.mchange.v2.c3p0" level="INFO">
+            <AppenderRef ref="A1"/>
+        </Logger>
+        <Logger name="com.mchange.v2.resourcepool" level="INFO">
+            <AppenderRef ref="A1"/>
+        </Logger>
+        <Logger name="org.logicalcobwebs.proxool" level="INFO">
+            <AppenderRef ref="A1"/>
+        </Logger>
+
+        <Root level="ERROR"/>
+    </Loggers>
+</Configuration>
